@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if error %}
+{{ error }}
+<br />
+<br />
+{% endif %}
+
+<h1>Create</h1>
+<br>
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+{% csrf_token %}
+Title:
+<br />
+<input type="text" name="title" style="width: 400px;"/>
+<br />
+Body:
+<br />
+<input type="textbox" name="body" style="width: 400px; height: 200px;"/>
+<br />
+Author:
+<br />
+<input type="text" name="author" style="width: 225px;"/>
+<br />
+Thumbnail/Icon:
+<br />
+<input type="file" name="icon" />
+<br />
+<!-- Image:
+<br />
+<input type="file" name="image" />
+<br /> -->
+<br />
+<input class="btn btn-primary" type="submit" value="Add Blog to Global Lit." />
+</form>
+
+{% endblock %}
