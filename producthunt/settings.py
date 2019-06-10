@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'qn1p7wyfd%)-yh$_x+(b2a&+ys1$ph)9@tnq06hmgp^bfq11@g'
+SECRET_KEY = 'qn1p7wyfd%)-yh$_x+(b2a&+ys1$ph)9jchchchcc@tnq06hmgp^bfq11@g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,12 +76,25 @@ WSGI_APPLICATION = 'producthunt.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 
+# DATABASES = {
+#     'default': {
+#          'ENGINE': 'djongo',
+#          'NAME': 'globalLitdb',
+#      }
+# }
+
 DATABASES = {
     'default': {
-         'ENGINE': 'djongo',
+         'ENGINE': 'django.db.backends.postgresql',
          'NAME': 'globalLitdb',
+         'USER': 'djangodbman',
+         'PASSWORD':'django12345global',
+         'HOST':'localhost',
+         'PORT':'5432',
      }
 }
+
+
 
 
 
@@ -137,4 +150,4 @@ try:
     from .local_settings import *
 
 except ImportError:
-    pass    
+    pass
